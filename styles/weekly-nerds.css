@@ -1,0 +1,84 @@
+:root{
+    --candle-height: 10em;
+}
+article{
+    width: var(--content-width);    
+}
+
+.candle-container{
+    position: absolute;
+    top: 3em;
+    right: 0;
+    display: grid;
+    height: var(--candle-height);
+    aspect-ratio: 1/1;
+    grid-template-rows: 2fr 1fr;
+    .holder{
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        .plate{
+            width: 80%;
+            justify-self: center;
+            background: linear-gradient(90deg,rgb(92, 58, 3), rgb(220, 180, 121) 30%,rgb(92, 58, 3)70%);
+            border-radius: 10% 10% 100% 100%;
+        }
+        .thingy{
+            position: relative;
+            place-self: center;
+            height: 100%;
+            width: 1em;
+            background: linear-gradient(90deg,rgb(92, 58, 3), rgb(220, 180, 121) 30%,rgb(92, 58, 3)70%);
+
+            &::after{
+                position: absolute;
+                z-index: -1;
+                content: "";
+                width: calc(var(--candle-height)/2);
+                height: calc(100%/3);
+                background: linear-gradient(90deg,rgb(92, 58, 3) 20%, rgb(220, 180, 121) 60%,rgb(92, 58, 3));
+                bottom: 0;
+            }
+        }
+    }
+    .candle{
+        display: grid;
+        place-items: center;
+        height: 100%;
+        grid-template-rows: 1fr 5fr;
+        .wick{
+            height: 100%;
+            width: .3em;
+            background: linear-gradient(90deg, black, silver, black);
+        }
+        .candle-body{
+            background: linear-gradient(90deg,rgb(188, 161, 121), beige 25%, white ,rgb(188, 161, 121));
+            height: 100%;
+            aspect-ratio: 1/2;
+        }
+    }
+    .fire {
+        position: absolute;
+        width: calc(var(--candle-height)/8);
+        height: calc(var(--candle-height)/4.5);
+
+        background: radial-gradient(
+            ellipse at 45% 75%, 
+            yellow 0%, 
+            orange 25%, 
+            orangered 55%, 
+            transparent 80%
+        );
+
+        border-radius: 50% 50% 40% 40%;
+        place-self: center;
+        transform: translateY(calc(var(--candle-height)*-.5));
+
+        animation: flicker 3s infinite ease-in-out alternate-reverse;
+    }
+}
+
+@keyframes flicker {
+    0%   { transform: translateY(calc(var(--candle-height)*-.5)) scale(1, 1); }
+    50%  { transform: translateY(calc(var(--candle-height)*-.5)) scale(1.1, 0.95); }
+    100% { transform: translateY(calc(var(--candle-height)*-.5)) scale(0.95, 1.1); }
+}

@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --dark-color: rgb(9, 13, 39);
+    --light-color: white;
+    --main-color: orange;
+
+    --content-width: clamp(5rem, 100%, 60rem)
+}
+
+body{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 2em;
+    place-items: center;
+}
+
+header{
+    width: var(--content-width);    
+}
+
+div{
+    display: block;
+}
