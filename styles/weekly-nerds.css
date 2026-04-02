@@ -1,14 +1,13 @@
 :root{
     --candle-height: 10em;
 }
-article{
-    width: var(--content-width);    
-}
 
+header{
+    width: 100%;
+    padding-block: 3em;
+}
 .candle-container{
-    position: absolute;
-    top: 3em;
-    right: 0;
+    place-self: end;
     display: grid;
     height: var(--candle-height);
     aspect-ratio: 1/1;
@@ -81,4 +80,9 @@ article{
     0%   { transform: translateY(calc(var(--candle-height)*-.5)) scale(1, 1); }
     50%  { transform: translateY(calc(var(--candle-height)*-.5)) scale(1.1, 0.95); }
     100% { transform: translateY(calc(var(--candle-height)*-.5)) scale(0.95, 1.1); }
+}
+
+main{
+    place-self: center;
+    width: var(--content-width);    
 }

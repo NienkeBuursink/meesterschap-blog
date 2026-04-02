@@ -10,16 +10,12 @@
 
     --content-width: clamp(5rem, 100%, 60rem)
 }
-
+html{
+    overflow-x: clip;
+}
 body{
     background-color: var(--dark-color);
     color: var(--light-color);
-    padding: 2em;
-    place-items: center;
-}
-
-header{
-    width: var(--content-width);    
 }
 
 div{
