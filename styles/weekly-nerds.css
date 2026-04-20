@@ -1,88 +1,132 @@
-:root{
+/* MARK: Basics 
+/*  */
+:root {
     --candle-height: 10em;
 }
 
-header{
-    width: 100%;
-    padding-block: 3em;
+body {
+    position: relative;
+    overflow: clip;
+
+    header {
+        width: 100%;
+        padding-block: 3em;
+    }
+
+    main {
+        place-self: center;
+        width: var(--content-width);
+    }
 }
-.candle-container{
+
+
+
+
+
+
+/* MARK: Candle 
+/*  */
+.candle-container {
+    z-index: 1;
+    position: relative;
     place-self: end;
     display: grid;
     height: var(--candle-height);
     aspect-ratio: 1/1;
     grid-template-rows: 2fr 1fr;
-    .holder{
+
+    .holder {
         display: grid;
         grid-template-rows: 1fr 2fr;
-        .plate{
+
+        .plate {
             width: 80%;
             justify-self: center;
-            background: linear-gradient(90deg,rgb(92, 58, 3), rgb(220, 180, 121) 30%,rgb(92, 58, 3)70%);
+            background: linear-gradient(90deg, rgb(92, 58, 3), rgb(220, 180, 121) 30%, rgb(92, 58, 3)70%);
             border-radius: 10% 10% 100% 100%;
         }
-        .thingy{
+
+        .thingy {
             position: relative;
             place-self: center;
             height: 100%;
             width: 1em;
-            background: linear-gradient(90deg,rgb(92, 58, 3), rgb(220, 180, 121) 30%,rgb(92, 58, 3)70%);
+            background: linear-gradient(90deg, rgb(92, 58, 3), rgb(220, 180, 121) 30%, rgb(92, 58, 3)70%);
 
-            &::after{
+            &::after {
                 position: absolute;
                 z-index: -1;
                 content: "";
                 width: calc(var(--candle-height)/2);
                 height: calc(100%/3);
-                background: linear-gradient(90deg,rgb(92, 58, 3) 20%, rgb(220, 180, 121) 60%,rgb(92, 58, 3));
+                background: linear-gradient(90deg, rgb(92, 58, 3) 20%, rgb(220, 180, 121) 60%, rgb(92, 58, 3));
                 bottom: 0;
             }
         }
     }
-    .candle{
+
+    .candle {
         display: grid;
         place-items: center;
         height: 100%;
         grid-template-rows: 1fr 5fr;
-        .wick{
+
+        .wick {
             height: 100%;
             width: .3em;
             background: linear-gradient(90deg, black, silver, black);
         }
-        .candle-body{
-            background: linear-gradient(90deg,rgb(188, 161, 121), beige 25%, white ,rgb(188, 161, 121));
+
+        .candle-body {
+            background: linear-gradient(90deg, rgb(188, 161, 121), beige 25%, white, rgb(188, 161, 121));
             height: 100%;
             aspect-ratio: 1/2;
         }
     }
-    .fire {
+    .flame {
         position: absolute;
-        width: calc(var(--candle-height)/8);
-        height: calc(var(--candle-height)/4.5);
-
-        background: radial-gradient(
-            ellipse at 45% 75%, 
-            yellow 0%, 
-            orange 25%, 
-            orangered 55%, 
-            transparent 80%
-        );
-
-        border-radius: 50% 50% 40% 40%;
+        height: calc(var(--candle-height)/4);
+        aspect-ratio: 2/5;
+        border-radius: 50%;
+        top: calc(0% + calc(var(--candle-height)/3));
         place-self: center;
-        transform: translateY(calc(var(--candle-height)*-.5));
-
+        background: radial-gradient(ellipse at 50% 70%,
+            yellow 0%,
+            orange 20%,
+            orangered 35%,
+            transparent 80%,
+            transparent 100%);
         animation: flicker 3s infinite ease-in-out alternate-reverse;
+        
     }
 }
 
-@keyframes flicker {
-    0%   { transform: translateY(calc(var(--candle-height)*-.5)) scale(1, 1); }
-    50%  { transform: translateY(calc(var(--candle-height)*-.5)) scale(1.1, 0.95); }
-    100% { transform: translateY(calc(var(--candle-height)*-.5)) scale(0.95, 1.1); }
+.glow {
+    position: fixed;
+    height: 200%;
+    width: 200%;
+    display: grid;
+    background-color: black;
+    background: radial-gradient(
+        circle,
+        transparent 2%,
+        transparent 4%,
+        black 20%,
+        black);
+    transform: translate(-50%, -50%);
 }
 
-main{
-    place-self: center;
-    width: var(--content-width);    
+
+@keyframes flicker {
+    0% {
+        transform: translateY(calc(var(--candle-height)*-.5)) scale(1, 1);
+    }
+
+    50% {
+        transform: translateY(calc(var(--candle-height)*-.5)) scale(1.1, 0.95);
+    }
+
+    100% {
+        transform: translateY(calc(var(--candle-height)*-.5)) scale(0.95, 1.1);
+    }
 }
