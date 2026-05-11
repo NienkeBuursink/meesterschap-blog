@@ -103,16 +103,14 @@ body {
 
 .glow {
     position: fixed;
+    pointer-events: none;
     height: 200%;
     width: 200%;
-    display: grid;
-    background-color: black;
+    display: block;
     background: radial-gradient(
         circle,
-        transparent 2%,
         transparent 4%,
-        black 20%,
-        black);
+        var(--darker-bg) 30%);
     transform: translate(-50%, -50%);
 }
 

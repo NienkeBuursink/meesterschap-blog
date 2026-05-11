@@ -4,20 +4,35 @@
 }
 
 :root{
-    --dark-color: rgb(9, 13, 39);
-    --light-color: white;
-    --main-color: orange;
+    color-scheme:light dark;
+	--bg: light-dark(#FADC9A, #3E5526);
+    --darker-bg: light-dark(#3f2105, #111a07);
+    --text-clr: light-dark(#3E5526, #ffefce);
+    --accent-clr: #ab2a02;
+    --accent-2: #F2d275;
+    --accent-3: #C08429;
+    
 
-    --content-width: clamp(5rem, 100%, 60rem)
+    --content-width: clamp(5rem, 85%, 60rem)
 }
 html{
     overflow-x: clip;
 }
+
 body{
-    background-color: var(--dark-color);
-    color: var(--light-color);
+    background-color: var(--bg);
+    padding-bottom: 2rem;
+    & *{
+        color: var(--text-clr);
+    }
 }
+
 
 div{
     display: block;
+}
+
+header nav a{
+    position: relative;
+    z-index: 1;
 }
