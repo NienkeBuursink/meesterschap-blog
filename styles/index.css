@@ -35,7 +35,7 @@ header{
                 &:hover{
                     cursor: pointer;
                     filter: drop-shadow(0 0 .3rem var(--text-clr));
-                    --scale-x: 1;
+                    --scale-x: 1 !important;
                 }
                             
                 &:nth-child(1),
@@ -70,10 +70,11 @@ header{
                 a{
                     display: block;
                     text-decoration: none;
-                    font-family: var(--header-font);
-                    font-size: clamp(3rem, 10vw, 6rem);
+                    font-family: church, serif;
+                    font-size: clamp(3rem, 15vw, 8rem);
                     text-transform: uppercase;
-                    text-box: text alphabetic;
+                    letter-spacing: normal;
+                    text-box: cap alphabetic;
                     color: var(--darker-bg);
 
                 }

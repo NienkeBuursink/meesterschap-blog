@@ -11,10 +11,12 @@ flame.addEventListener("mousemove", (e) => {
 
 function followCursor(){
     document.addEventListener("mousemove", (e) =>{
-        document.body.style.cursor = "pointer";
+        document.body.style.cursor = "pointer"
         x = e.clientX
         y = e.clientY
 
+        glow.style.position= "fixed"
+        glow.style.setProperty("transform", "translate(-50%, -50%)","important")
         glow.style.left = x + "px"
         glow.style.top = y + "px"
 

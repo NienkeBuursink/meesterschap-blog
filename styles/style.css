@@ -5,6 +5,12 @@
 }
 
 @font-face {
+    font-family: church;
+    src: url(../fonts/church.ttf);
+    /* https://www.dafont.com/black-clover.font */
+}
+
+@font-face {
     font-family: magical;
     src: url(../fonts/magical.ttf);
     /* https://www.fontspace.com/magical-stranger-font-f139281 */
