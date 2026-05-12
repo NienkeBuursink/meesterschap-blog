@@ -75,6 +75,7 @@ header{
                     text-transform: uppercase;
                     letter-spacing: normal;
                     text-box: cap alphabetic;
+                    text-align: center;
                     color: var(--darker-bg);
 
                 }
