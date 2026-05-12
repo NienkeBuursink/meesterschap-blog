@@ -11,16 +11,17 @@ flame.addEventListener("mousemove", (e) => {
 
 function followCursor(){
     document.addEventListener("mousemove", (e) =>{
-    x = e.clientX
-    y = e.clientY
+        document.body.style.cursor = "pointer";
+        x = e.clientX
+        y = e.clientY
 
-    glow.style.left = x + "px"
-    glow.style.top = y + "px"
+        glow.style.left = x + "px"
+        glow.style.top = y + "px"
 
-    flame.style.position= "fixed"
-    flame.style.setProperty("transform", "translate(-50%, -100%)","important")
-    flame.style.left = x + "px"
-    flame.style.top = y + "px"
+        flame.style.position= "fixed"
+        flame.style.setProperty("transform", "translate(-50%, -100%)","important")
+        flame.style.left = x + "px"
+        flame.style.top = y + "px"
     }) 
 }
 

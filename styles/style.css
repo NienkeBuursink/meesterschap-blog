@@ -1,38 +1,91 @@
+@font-face {
+    font-family: stainedglass;
+    src: url(../fonts/dragon-fly-font/DragonFly-2XeX.ttf);
+    /* https://www.fontspace.com/dragon-fly-font-f12276 */
+}
+
+@font-face {
+    font-family: magical;
+    src: url(../fonts/magical.ttf);
+    /* https://www.fontspace.com/magical-stranger-font-f139281 */
+}
+
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-:root{
-    color-scheme:light dark;
-	--bg: light-dark(#FADC9A, #3E5526);
+:root {
+    /* colors */
+    color-scheme: light dark;
+    --bg: light-dark(#FADC9A, #3E5526);
     --darker-bg: light-dark(#3f2105, #111a07);
     --text-clr: light-dark(#3E5526, #ffefce);
     --accent-clr: #ab2a02;
     --accent-2: #F2d275;
     --accent-3: #C08429;
-    
 
-    --content-width: clamp(5rem, 85%, 60rem)
+    /* fonts */
+    --header-font: stainedglass, Georgia, 'Times New Roman', Times, serif;
+    --text-font: magical, sans-serif;
+
+    /* sizes */
+    --content-width: clamp(5rem, 85%, 60rem);
+    --article-spacing: 3rem;
+    --header-size: clamp(2rem, 5vw, 4rem);
+    --header-size-small: clamp(1.5rem, 3vw, 2.5rem);
+    --text-size: clamp(1.2rem, 2vw, 1.6rem);
 }
-html{
+
+html {
     overflow-x: clip;
 }
 
-body{
+body {
     background-color: var(--bg);
     padding-bottom: 2rem;
-    & *{
+
+    & * {
         color: var(--text-clr);
+        font-size: var(--text-size);
+        font-family: var(--text-font);
     }
 }
 
-
-div{
+div {
     display: block;
 }
 
-header nav a{
-    position: relative;
-    z-index: 1;
+header {
+    margin-top: 2em;
+    width: var(--content-width);
+    place-self: center;
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            li {
+                a {
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+h1,
+h2 {
+    font-family: var(--header-font);
+    font-size: var(--header-size);
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--text-font);
+    font-size: var(--header-size-small);
 }

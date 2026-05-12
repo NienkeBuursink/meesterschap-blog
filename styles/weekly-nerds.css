@@ -7,13 +7,9 @@
 body {
     position: relative;
     overflow: clip;
-
-    header {
-        width: 100%;
-        padding-block: 3em;
-    }
-
+    
     main {
+        margin-top: var(--candle-height);
         place-self: center;
         width: var(--content-width);
     }
@@ -28,7 +24,9 @@ body {
 /*  */
 .candle-container {
     z-index: 1;
-    position: relative;
+    position: absolute;
+    top: calc(var(--candle-height) / 2);
+    right: 0;
     place-self: end;
     display: grid;
     height: var(--candle-height);
@@ -126,5 +124,15 @@ body {
 
     100% {
         transform: translateY(calc(var(--candle-height)*-.5)) scale(0.95, 1.1);
+    }
+}
+
+
+/* MARK: Articles */
+/*  */
+article{
+    margin-bottom: var(--article-spacing);
+    time{
+        font-family: var(--header-font);
     }
 }
