@@ -25,13 +25,12 @@
 :root {
     /* colors */
     color-scheme: light dark;
-    --bg: light-dark(#FADC9A, #3E5526);
-    --darker-bg: light-dark(#3f2105, #111a07);
+    --bg: light-dark(#ffefce, #3E5526);
+    --darker-bg: light-dark(#2b1e13, #0f1606);
     --text-clr: light-dark(#3E5526, #ffefce);
     --sky-clr: light-dark(rgb(171, 239, 239), rgb(3, 3, 64));
     --accent-clr: #ab2a02;
     --accent-2: #F2d275;
-    --accent-3: #C08429;
 
     /* fonts */
     --header-font: stainedglass, Georgia, 'Times New Roman', Times, serif;
