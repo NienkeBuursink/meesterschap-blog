@@ -1,0 +1,171 @@
+:root{
+    --orange-height: clamp(3rem, 10vw, 5rem)
+
+}
+html{
+    height: 100vh;
+}
+body{
+    background-color: var(--sky-clr);
+    height: 100%;
+    padding: 0;
+}
+main{
+    display: grid;
+    grid-template-rows: var(--header-size) 1fr;
+    gap: 2em;
+    place-items: center;
+    min-height: 80vh
+}
+
+
+/* MARK: Boom */
+fieldset {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr 3fr;
+    border: none;
+    height: 100%;
+    width: 100%;
+
+    legend {
+        position: absolute;
+        top: 0;
+        transform: translateY(-10000%);
+    }
+
+    .leaves{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: light-dark(#517030, #3E5526);
+        border-radius: 50%;
+        grid-area: 1 / 1 / 4 / 4;
+        z-index: -1;
+    }
+    .trunk{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: light-dark(#764e32,#5c3b24);
+        grid-area: 3/2/5/3;
+        border-radius: 10% 10% 0% 0%;
+    }
+
+
+
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        &:checked + label{
+            /* position: absolute;
+            grid-row: -1;
+            bottom: 0;
+            margin-bottom: 0;
+            rotate: 150deg; */
+            animation: fall-and-bounce .5s forwards;
+        }
+    }
+
+    .orange {
+        font-size: var(--orange-height);
+        text-box: trim-both cap alphabetic;
+        cursor: pointer;
+        transition: transform .2s;
+        &:nth-of-type(1){
+            grid-area: 2/1/3/2;
+            place-self: center;
+            anchor-name: --goal-one;
+        }
+        &:nth-of-type(2){
+            grid-area: 2/2/3/3;
+            justify-self: start;
+            align-self: start;
+            anchor-name: --goal-two;
+        }
+        &:nth-of-type(3){
+            grid-area: 2/3/3/4;
+            justify-self: start;
+            align-self: end;
+            margin-bottom: .8em;
+            anchor-name: --goal-three;
+        }
+    }
+    .orange:hover,
+    .orange:focus-visible {
+        transform: scale(1.08);
+        filter: brightness(1.1);
+    }
+
+    dialog{
+        position: absolute;
+        background-color: #ffefceaa;
+        border-radius: 1.5rem;
+        border: none;
+        padding: 1em;
+        margin-bottom: var(--orange-height);
+        position-area: span-top right; 
+        & * {
+            color: #3E5526;
+        }
+        & h2{
+            font-size: var(--header-size-small);
+        }
+        /* https://css-tricks.com/css-anchor-positioning-guide/ */
+        &:nth-of-type(1){
+            position-anchor: --goal-one;
+        }
+        &:nth-of-type(2){
+            position-anchor: --goal-two;
+        }
+        &:nth-of-type(3){
+            position-area: span-top left; 
+            position-anchor: --goal-three;
+        }
+    }
+}
+
+.ground{
+    position: absolute;
+    height: var(--orange-height);
+    width: 100%;
+    background-color: light-dark(#517030, #3E5526);
+}
+
+.sun {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: .5em;
+    width: calc(var(--orange-height)*3);
+    aspect-ratio: 1/1;
+    background-image: url(../images/sun.svg); /* https://staging.svgrepo.com/svg/53719/sun?edit=true */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -10;
+    @media (prefers-color-scheme: dark){
+        margin-top: 2em;
+        background-image: url(../images/moon.png); /*https://www.svgheart.com/product/moon-and-stars-silhouette-free-svg-file/?srsltid=AfmBOorV6JT9271IjXewzvthoxJ44FodRm2VTLnifpB46g8g9L4PR1HM*/
+    }
+}
+
+
+@media (min-width: 650px){
+    main{
+        place-items: start;
+        align-items: center;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr
+    }
+}
+
+@media (prefers-reduced-motion: no-preference){
+    @keyframes fall-and-bounce {
+        0% { transform: translateY(0) rotate(0); }
+        70% { transform: translateY(100%) rotate(200deg); }
+        85% { transform: translateY(20%) rotate(190deg); }
+        100% { transform: translateY(100%) rotate(195deg); }
+    }
+}

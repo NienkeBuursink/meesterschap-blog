@@ -5,9 +5,7 @@ const flame = document.querySelector(".flame")
 let x = 0
 let y = 0
 
-flame.addEventListener("mousemove", (e) => {
-    followCursor()
-})
+flame.addEventListener("mousemove", followCursor)
 
 function followCursor(){
     document.addEventListener("mousemove", (e) =>{
@@ -24,6 +22,6 @@ function followCursor(){
         flame.style.setProperty("transform", "translate(-50%, -100%)","important")
         flame.style.left = x + "px"
         flame.style.top = y + "px"
+        flame.style.pointerEvents = "none"
     }) 
 }
-

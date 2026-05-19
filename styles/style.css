@@ -28,6 +28,7 @@
     --bg: light-dark(#FADC9A, #3E5526);
     --darker-bg: light-dark(#3f2105, #111a07);
     --text-clr: light-dark(#3E5526, #ffefce);
+    --sky-clr: light-dark(rgb(171, 239, 239), rgb(3, 3, 64));
     --accent-clr: #ab2a02;
     --accent-2: #F2d275;
     --accent-3: #C08429;
@@ -40,7 +41,7 @@
     --content-width: clamp(5rem, 85%, 60rem);
     --article-spacing: 3rem;
     --header-size: clamp(2rem, 5vw, 4rem);
-    --header-size-small: clamp(1.5rem, 3vw, 2.5rem);
+    --header-size-small: clamp(1.5rem, 3vw, 2.3rem);
     --text-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
@@ -64,7 +65,7 @@ div {
 }
 
 header {
-    margin-top: 2em;
+    padding-block: 2em;
     width: var(--content-width);
     place-self: center;
     nav {
@@ -80,6 +81,10 @@ header {
             }
         }
     }
+}
+main{
+    width: var(--content-width);
+    place-self: center;
 }
 
 h1,
