@@ -25,8 +25,8 @@
 :root {
     /* colors */
     color-scheme: light dark;
-    --bg: light-dark(#ffefce, #3E5526);
-    --darker-bg: light-dark(#2b1e13, #0f1606);
+    --bg: light-dark(#beeabe, #3E5526);
+    --darker-bg: light-dark(#2d4e2d, #0f1606);
     --text-clr: light-dark(#3E5526, #ffefce);
     --sky-clr: light-dark(rgb(171, 239, 239), rgb(3, 3, 64));
     --accent-clr: #ab2a02;
@@ -63,25 +63,7 @@ div {
     display: block;
 }
 
-header {
-    padding-block: 2em;
-    width: var(--content-width);
-    place-self: center;
-    nav {
-        ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            li {
-                a {
-                    position: relative;
-                    z-index: 1;
-                }
-            }
-        }
-    }
-}
-main{
+main {
     width: var(--content-width);
     place-self: center;
 }

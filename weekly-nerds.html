@@ -7,17 +7,24 @@
     <title>Weekly Nerds</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/weekly-nerds.css">
-    <script src="scripts/weekly-nerds.js" defer></script>
+    <link rel="stylesheet" href="styles/header.css">
 </head>
 
 <body>
     <div class="glow" aria-label=""></div>
+    </header>
     <header>
         <nav>
+            <input type="checkbox" id="nav-toggle" aria-hidden="true">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu openen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="websites.html">Websites</a></li>
-                <li><a href="weekly-nerds.html">Weekly nerds</a></li>
+                <li><a href="weekly-nerds.html" aria-current="page">Weekly nerds</a></li>
                 <li><a href="voortgang.html">Voortgang</a></li>
                 <li><a href="leerdoelen.html">Leerdoelen</a></li>
                 <li><a href="overmij.html">Over mij</a></li>
@@ -304,6 +311,8 @@
     <footer>
 
     </footer>
+    <script src="scripts/river.js" defer></script>
+    <script src="scripts/weekly-nerds.js" defer></script>
 </body>
 
 </html>

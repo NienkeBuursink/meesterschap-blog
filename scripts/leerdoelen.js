@@ -18,3 +18,4 @@ radios.forEach((radio, index) => { //ChatGPT prompt: hoe open ik per radiobutton
         }
     });
 });
+
